@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Organization>
+<h2>Организации</h2>
+<p><a asp-action="Add"><input type="submit" value="Добавить" /></a></p>
+<table class="table">
+	<tr><th>Название</th><th></th><th></th></tr>
+	@foreach (var item in Model)
+	{ 
+		<tr>
+			<td>@item.Name</td>
+			<td>
+				<a asp-action="Edit" asp-controller="Organization" asp-route-id="@item.Id">
+					<input type="submit" value="Редактировать" />
+				</a>
+			</td>
+
+			<td>
+				<form asp-controller="Organization" asp-action="Remove" method="post" asp-route-id="@item.Id">
+					<input type="submit" value="Удалить" />
+				</form>
+			</td>
+		</tr>
+	}
+</table>

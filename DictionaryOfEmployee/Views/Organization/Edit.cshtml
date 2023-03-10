@@ -1,0 +1,15 @@
+﻿@model Organization
+
+<h2>Редактирование организации</h2>
+<form asp-action="Edit" asp-controller="Organization" asp-route-id="@Model.Id">
+
+    <div>
+            <label asp-for="Name">Name</label><br />
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name" />
+    </div>
+        <br />
+	<div>
+		<input type="submit" value="Сохранить изменения" />
+	</div>
+</form>

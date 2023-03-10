@@ -1,0 +1,42 @@
+﻿@model List<Employee>
+<h2>Работники</h2>
+<div><a asp-action="Add"><input type="submit" value="Добавить" /></a></div>
+<form method="post">
+	<div class = "form-inline form-group">
+		<label class = "control-label">Поиск по работнику</label>
+		<input name = "value" class="form-control" />
+		<input type = "submit" value="Поиск" class="btn btn-default"
+	</div>
+</form>
+<table class="table">
+	<tr>
+		<th>Департамент</th>
+		<th>Должность</th>
+		<th>ФИО</th>
+		<th>Номер телефона</th>
+		<th>Адрeс эл.почты</th>
+		<th></th>
+		<th></th>
+	</tr>
+	@foreach (var item in Model)
+	{ 
+		<tr>
+			<td>@item.Department.Name</td>
+			<td>@item.Position.Name</td>
+			<td>@(item.User.LastName + " " + item.User.FirstName + " " + item.User.Patronymic)</td>
+			<td>@item.Telephone</td>
+			<td>@item.Email</td>
+			<td>
+				<a asp-action="Edit" asp-controller="Employee" asp-route-id="@item.Id">
+					<input type="submit" value="Редактировать" />
+				</a>
+			</td>
+
+			<td>
+				<form asp-controller="Employee" asp-action="Remove" method="post" asp-route-id="@item.Id">
+					<input type="submit" value="Удалить" />
+				</form>
+			</td>
+		</tr>
+	}
+</table>

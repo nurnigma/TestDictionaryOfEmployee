@@ -1,0 +1,20 @@
+﻿@model Department
+
+<h2>Изменить данные о подразделении</h2>
+<form asp-action="Edit" asp-controller="Department" asp-route-id="@Model.Id">
+	<div>
+
+		<label asp-for="Name">Название подразделения</label><br />
+		<input type="text" asp-for="Name" />
+
+	<div>
+		<label asp-for="OrganizationId">Организация</label>
+		<select asp-for="OrganizationId" asp-items="ViewBag.Organization"></select>
+	</div>
+	</div>
+	    <br />
+	<div>
+		<input type="submit" value="Сохранить изменения" />
+	</div>
+
+</form>

@@ -1,0 +1,16 @@
+﻿@model Position
+@{
+	ViewData["Title"] = "Пользователи";
+}
+<h2>Добавление организации</h2>
+<form asp-action="Add" asp-controller="position">
+    <div>
+            <label asp-for="Name">Название должности</label><br />
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name" />
+    </div>    
+        <br />
+    <div>
+        <input type="submit" value="Добавить" />
+    </div>
+    </form>

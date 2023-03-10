@@ -1,0 +1,14 @@
+﻿@model Position
+
+<h2>Редактирование должности</h2>
+<form asp-action="Edit" asp-controller="position" asp-route-id="@Model.Id">
+    <div>
+            <label asp-for="Name">Название должности</label><br />
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name" />
+    </div>  
+        <br />
+	<div>
+		<input type="submit" value="Сохранить изменения" />
+	</div>
+</form>

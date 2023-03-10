@@ -1,0 +1,31 @@
+﻿@model Employee
+
+<h2>Редактирование работников</h2>
+<form asp-action="edit" asp-controller="Employee" asp-route-id="@Model.Id">
+	 <div>
+		<label asp-for="DepartmentId">Подразделение</label>
+		<select asp-for="DepartmentId" asp-items="ViewBag.Department"></select>
+	</div>    
+    <div>
+		<label asp-for="PositionId">Должность</label>
+		<select asp-for="PositionId" asp-items="ViewBag.Position"></select>
+	</div>    
+    <div>
+		<label asp-for="UserId">Пользователь</label>
+		<select asp-for="UserId" asp-items="ViewBag.User"></select>
+	</div>
+    <div>
+            <label asp-for="Telephone">Номер телефона</label><br />
+            <input type="text" asp-for="Telephone" />
+            <span asp-validation-for="Telephone" />
+    </div>    
+    <div>
+            <label asp-for="Email">Адрес почты</label><br />
+            <input type="text" asp-for="Email" />
+            <span asp-validation-for="Email" />
+    </div>
+	    <br />
+	<div>
+		<input type="submit" value="Сохранить изменения" />
+	</div>
+</form>

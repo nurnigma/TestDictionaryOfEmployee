@@ -1,0 +1,26 @@
+﻿@model User
+@{
+	ViewData["Title"] = "Пользователи";
+}
+<h2>Добавление организации</h2>
+<form asp-action="Add" asp-controller="user">
+    <div>
+            <label asp-for="LastName">Фамилия</label><br />
+            <input type="text" asp-for="LastName" />
+            <span asp-validation-for="LastName" />
+    </div>    
+    <div>
+            <label asp-for="FirstName">Имя</label><br />
+            <input type="text" asp-for="FirstName" />
+            <span asp-validation-for="FirstName" />
+    </div>    
+    <div>
+            <label asp-for="Patronymic">Отчество (если имеется)</label><br />
+            <input type="text" asp-for="Patronymic" />
+            <span asp-validation-for="Patronymic" />
+    </div>
+        <br />
+    <div>
+        <input type="submit" value="Добавить" />
+    </div>
+    </form>

@@ -1,0 +1,18 @@
+﻿@model Department
+
+<h2>Добавление подразделений</h2>
+<form asp-action="Add" asp-controller="department">
+    <div>
+            <label asp-for="Name">Name</label><br />
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name" />
+    </div>
+    <div>
+		<label asp-for="OrganizationId">Organization</label>
+		<select asp-for="OrganizationId" asp-items="ViewBag.Organization"></select>
+	</div>
+    <br />
+    <div>
+        <input type="submit" value="Добавить" />
+    </div>
+</form>
